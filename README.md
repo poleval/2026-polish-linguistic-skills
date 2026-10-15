@@ -30,7 +30,7 @@ In particular, a stylistic preference does not justify a rewrite of a grammatica
 
 ### Dataset
 
-The The **test-A** dataset consists of 421 Polish sentences based on material from UD Polish-PUD. Morfeusz 2 was involved in preparing or verifying controlled inflectional modifications. The material covers agreement, inflection and government-related phenomena, including nominal, adjectival and verbal forms.
+The **test-A** dataset consists of 421 Polish sentences based on material from UD Polish-PUD. Morfeusz 2 was involved in preparing or verifying controlled inflectional modifications. The material covers agreement, inflection and government-related phenomena, including nominal, adjectival and verbal forms.
 
 Some sentences require no changes; others contain one or more inflectional errors. Corrections are evaluated at sentence level, which means that a system must identify all relevant errors and avoid unnecessary edits.
 
@@ -87,7 +87,7 @@ The response consists solely of the written-out numeral. Do not repeat the sente
 
 ### Dataset
 
-The The **test-A** dataset comprises 2,653 sentences drawn from Polish dependency-treebank resources: NKJP1M-UD, PDB-UD, PUD-PL and UD Polish LFG. Each sentence contains exactly one marked target expression. The examples include numerals of different lengths in a range of grammatical constructions.
+The **test-A** dataset comprises 2,653 sentences drawn from Polish dependency-treebank resources: NKJP1M-UD, PDB-UD, PUD-PL and UD Polish LFG. Each sentence contains exactly one marked target expression. The examples include numerals of different lengths in a range of grammatical constructions.
 
 ### Input format
 
@@ -134,7 +134,7 @@ The comparison concerns the meaning of the marked word, not the overall topic, t
 
 ### Dataset
 
-The The **test-A** dataset consists of 139 examples covering 119 different target lemmas and several parts of speech, including nouns, adjectives, verbs and adverbs. Related Polish word-sense-disambiguation resources available through CLARIN-PL include KPWr, KPWr-100, Sherlock, Składnica, WikiGLEX, EmoGLEX and Walenty.
+The **test-A** dataset consists of 139 examples covering 119 different target lemmas and several parts of speech, including nouns, adjectives, verbs and adverbs. Related Polish word-sense-disambiguation resources available through CLARIN-PL include KPWr, KPWr-100, Sherlock, Składnica, WikiGLEX, EmoGLEX and Walenty.
 
 Candidate passages vary in style and length. Some contain multiple sentences or dictionary-style fragments. In every case, the target markers identify the word whose meaning must be compared.
 
@@ -191,7 +191,7 @@ The model must select the candidate that refers to the same entity as the target
 
 ### Dataset
 
-The The **test-A** dataset comprises 348 examples derived from the Polish Coreference Corpus (PCC) in the CorefUD representation. The passages contain pronominal and nominal target mentions, vary in length and present four marked candidate mentions. Solving the task requires interpreting referential relations in Polish context.
+The **test-A** dataset comprises 348 examples derived from the Polish Coreference Corpus (PCC) in the CorefUD representation. The passages contain pronominal and nominal target mentions, vary in length and present four marked candidate mentions. Solving the task requires interpreting referential relations in Polish context.
 
 ### Input format
 
@@ -246,7 +246,7 @@ The 21 possible relation labels are: Alternative, Attribution, Cause, Co-occuren
 
 ### Dataset
 
-The The **test-A** dataset contains 63 topic passages from 49 Polish documents.
+The **test-A** dataset contains 63 topic passages from 49 Polish documents.
 
 ### Input format
 
