@@ -2,12 +2,12 @@
 
 This task evaluates linguistic competence in Polish across six complementary subtasks covering morphosyntax, lexical semantics, reference, discourse relations and punctuation. Systems are evaluated on morphosyntactic error detection and correction, contextual numeral inflection, word-sense discrimination, coreference antecedent selection, discourse dependency parsing and comma placement. Together, the subtasks assess the ability to use grammatical, semantic and discourse context to make precise linguistic decisions at the word, sentence and multi-sentence levels.
 
-- [Subtask 1: Polish Morphosyntactic Error Detection and Correction](#task-1-polish-morphosyntactic-error-detection-and-correction)
-- [Subtask 2: Contextual Numeral Inflection in Polish](#task-2-contextual-numeral-inflection-in-polish)
-- [Subtask 3: Same Sense in Context for Polish](#task-3-same-sense-in-context-for-polish)
-- [Subtask 4: Polish Coreference Antecedent Selection](#task-4-polish-coreference-antecedent-selection)
-- [Subtask 5: Polish Discourse Dependency Parsing](#task-5-polish-discourse-dependency-parsing)
-- [Subtask 6: Polish Comma Placement](#task-6-polish-comma-placement)
+- [Subtask 1: Polish Morphosyntactic Error Detection and Correction](#subtask-1-polish-morphosyntactic-error-detection-and-correction)
+- [Subtask 2: Contextual Numeral Inflection in Polish](#subtask-2-contextual-numeral-inflection-in-polish)
+- [Subtask 3: Same Sense in Context for Polish](#subtask-3-same-sense-in-context-for-polish)
+- [Subtask 4: Polish Coreference Antecedent Selection](#subtask-4-polish-coreference-antecedent-selection)
+- [Subtask 5: Polish Discourse Dependency Parsing](#subtask-5-polish-discourse-dependency-parsing)
+- [Subtask 6: Polish Comma Placement](#subtask-6-polish-comma-placement)
 
 ## Subtask 1: Polish Morphosyntactic Error Detection and Correction
 
