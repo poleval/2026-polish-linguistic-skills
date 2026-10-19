@@ -1,12 +1,12 @@
 # Polish Linguistic Skills
 
-This task evaluates linguistic competence in Polish across six complementary subtasks covering morphosyntax, lexical semantics, reference, discourse relations and punctuation. Systems are evaluated on morphosyntactic error detection and correction, contextual numeral inflection, word-sense discrimination, coreference antecedent selection, discourse dependency parsing and comma placement. Together, the subtasks assess the ability to use grammatical, semantic and discourse context to make precise linguistic decisions at the word, sentence and multi-sentence levels.
+This task evaluates linguistic competence in Polish across six complementary subtasks covering morphosyntax, lexical semantics, reference, discourse relations and punctuation. Systems are evaluated on morphosyntactic error detection and correction, contextual numeral inflection, word-sense discrimination, coreference antecedent selection, universal discourse parsing and comma placement. Together, the subtasks assess the ability to use grammatical, semantic and discourse context to make precise linguistic decisions at the word, sentence and multi-sentence levels.
 
 - [Subtask 1: Polish Morphosyntactic Error Detection and Correction](#subtask-1-polish-morphosyntactic-error-detection-and-correction)
 - [Subtask 2: Contextual Numeral Inflection in Polish](#subtask-2-contextual-numeral-inflection-in-polish)
 - [Subtask 3: Same Sense in Context for Polish](#subtask-3-same-sense-in-context-for-polish)
 - [Subtask 4: Polish Coreference Antecedent Selection](#subtask-4-polish-coreference-antecedent-selection)
-- [Subtask 5: Polish Discourse Dependency Parsing](#subtask-5-polish-discourse-dependency-parsing)
+- [Subtask 5: Polish Universal Discourse Parsing](#subtask-5-polish-universal-discourse-parsing)
 - [Subtask 6: Polish Comma Placement](#subtask-6-polish-comma-placement)
 
 ## Subtask 1: Polish Morphosyntactic Error Detection and Correction
@@ -228,19 +228,19 @@ The primary metric is macro-F1 over labels `A`, `B`, `C` and `D`, with one selec
 
 Provide exactly one candidate label per input item, without rewriting the passage or explaining the decision.
 
-## Subtask 5: Polish Discourse Dependency Parsing
+## Subtask 5: Polish Universal Discourse Parsing
 
 ### Introduction and motivation
 
-Understanding discourse requires identifying relationships among statements, not merely interpreting individual sentences. Relations such as elaboration, cause and contrast can connect discourse units across sentence boundaries, organizing the text into a coherent structure.
+Discourse comprehension requires identifying relationships among statements, not just interpreting individual sentences. Elaboration, cause and contrast can connect discourse units across sentence boundaries, organizing a text into a coherent hierarchy.
 
-This task evaluates the ability to reconstruct hierarchical, labeled discourse structures in Polish.
+The task evaluates reconstruction of hierarchical, labeled discourse structures in Polish according to the formalism proposed by the [Universal Discourse project](https://udisc.org/).
 
 ### Subtask description
 
-Each input is a topic passage segmented into discourse units (DUs), which together cover the passage without overlapping. The model assigns a parent (head) and a relation label to every DU except the root. The root has neither a parent nor a relation; all dependencies must form a single directed, rooted tree.
+Each input is a topic passage segmented into discourse units (DUs), which together cover the passage without overlap. The model selects a parent (head) and a relation label for every DU except the root. The root has no parent or relation; all dependencies must form one directed rooted tree.
 
-A head may precede or follow its dependent. A DU may contain non-contiguous text parts; their `order` values indicate their positions in the original passage.
+A head may appear before or after its dependent. A DU may contain non-contiguous parts, whose `order` values indicate where they occur in the original text.
 
 The 21 possible relation labels are: Alternative, Attribution, Cause, Co-occurence, Comment, Concession, Condition, Contrast, Elaboration, Entity-elaboration, Exemplification, Feedback dependence, Formatting, Manner, Metatext, Purpose, Question-Answer, Repetition, Sequence-Elaboration, Similarity and Substitution.
 
@@ -250,7 +250,7 @@ The **test-A** dataset contains 63 topic passages from 49 Polish documents.
 
 ### Input format
 
-Each input JSON object contains `id`, `document_id`, `passage_id` and `discourse_units`. Each DU includes `du_id`, `orig_id`, `sent_id` and an ordered list of text `parts`:
+Each JSON item contains `id`, `document_id`, `passage_id` and `discourse_units`. Each DU provides `du_id`, `orig_id`, `sent_id` and ordered text `parts`:
 
 ```json
 {
@@ -267,7 +267,7 @@ Each input JSON object contains `id`, `document_id`, `passage_id` and `discourse
 
 ### Output format and example
 
-Return a JSON object containing a `discourse_units` array. For each DU, supply `du_id`, `head` and `relation`. Use `null` for the root's `head` and `relation`. For the example above:
+Return a JSON object with a `discourse_units` array. Supply `du_id`, `head` and `relation` for each DU; use `null` for the root's `head` and `relation`. For the example above:
 
 ```json
 {
@@ -280,13 +280,13 @@ Return a JSON object containing a `discourse_units` array. For each DU, supply `
 
 ### Evaluation
 
-The primary metric is Labeled Attachment Score (LAS): both the parent and relation must match the reference annotation for each non-root DU. Unlabeled Attachment Score (UAS) measures parent accuracy alone. Root accuracy and tree validity may be reported separately.
+The primary metric, Labeled Attachment Score (LAS), requires both the parent and relation to match gold for each non-root DU. Unlabeled Attachment Score (UAS) measures parent accuracy alone; root accuracy and tree validity may be reported separately.
 
-Each DU must appear exactly once in a connected, acyclic tree with a single root. Invalid heads, dependencies across passages and relation labels outside the specified inventory are errors.
+Every DU must appear once in a connected, acyclic tree with one root. Invalid heads, cross-passage links and labels outside the inventory are errors.
 
 ### Submission format
 
-Provide one JSON object per topic passage containing only the predicted `discourse_units` array. Do not repeat the input text or add explanations.
+Produce one JSON object per topic passage containing only the predicted `discourse_units`. Do not repeat the input text or add explanations.
 
 ## Subtask 6: Polish Comma Placement
 
