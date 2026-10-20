@@ -9,6 +9,10 @@ This task evaluates linguistic competence in Polish across six complementary sub
 - [Subtask 5: Polish Universal Discourse Parsing](#subtask-5-polish-universal-discourse-parsing)
 - [Subtask 6: Polish Comma Placement](#subtask-6-polish-comma-placement)
 
+## Model size limit
+
+Only models with at most 12B parameters may be used in this task. The limit is meant to encourage creative adaptation of models to the task, e.g. through fine-tuning, rather than reliance on the largest available models.
+
 ## Subtask 1: Polish Morphosyntactic Error Detection and Correction
 
 ### Introduction and motivation
