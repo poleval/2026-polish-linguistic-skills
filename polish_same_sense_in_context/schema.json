@@ -1,0 +1,30 @@
+{
+  "description": "One row of the published polish_same_sense_in_context/inputs.jsonl.",
+  "properties": {
+    "id": {
+      "format": "uuid",
+      "title": "Id",
+      "type": "string"
+    },
+    "reference_sentence": {
+      "title": "Reference Sentence",
+      "type": "string"
+    },
+    "candidates": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Candidates",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "reference_sentence",
+    "candidates"
+  ],
+  "title": "SameSenseInputRow",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false
+}

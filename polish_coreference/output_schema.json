@@ -1,0 +1,19 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "format": "uuid",
+      "type": "string"
+    },
+    "answer": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "answer"
+  ],
+  "type": "object",
+  "title": "Coreference submission line",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,90 @@
+{
+  "$defs": {
+    "DiscourseUnit": {
+      "additionalProperties": false,
+      "description": "One discourse unit of a passage, as a submitter receives it: its ids and its ordered parts.",
+      "properties": {
+        "du_id": {
+          "title": "Du Id",
+          "type": "string"
+        },
+        "orig_id": {
+          "title": "Orig Id",
+          "type": "string"
+        },
+        "sent_id": {
+          "title": "Sent Id",
+          "type": "string"
+        },
+        "parts": {
+          "items": {
+            "$ref": "#/$defs/UnitPart"
+          },
+          "title": "Parts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "du_id",
+        "orig_id",
+        "sent_id",
+        "parts"
+      ],
+      "title": "DiscourseUnit",
+      "type": "object"
+    },
+    "UnitPart": {
+      "additionalProperties": false,
+      "description": "One contiguous piece of a discourse unit, with its position in the original text.",
+      "properties": {
+        "order": {
+          "title": "Order",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "order",
+        "text"
+      ],
+      "title": "UnitPart",
+      "type": "object"
+    }
+  },
+  "description": "One row of the published polish_discourse_parsing/inputs.jsonl.",
+  "properties": {
+    "id": {
+      "format": "uuid",
+      "title": "Id",
+      "type": "string"
+    },
+    "document_id": {
+      "title": "Document Id",
+      "type": "string"
+    },
+    "passage_id": {
+      "title": "Passage Id",
+      "type": "string"
+    },
+    "discourse_units": {
+      "items": {
+        "$ref": "#/$defs/DiscourseUnit"
+      },
+      "title": "Discourse Units",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "document_id",
+    "passage_id",
+    "discourse_units"
+  ],
+  "title": "DiscourseInputRow",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false
+}

@@ -1,0 +1,22 @@
+{
+  "description": "One row of the published polish_comma_placement/inputs.jsonl.",
+  "properties": {
+    "id": {
+      "format": "uuid",
+      "title": "Id",
+      "type": "string"
+    },
+    "sentence_with_positions": {
+      "title": "Sentence With Positions",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "sentence_with_positions"
+  ],
+  "title": "CommaInputRow",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false
+}

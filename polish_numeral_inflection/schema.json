@@ -1,0 +1,22 @@
+{
+  "description": "One row of the published polish_numeral_inflection/inputs.jsonl.",
+  "properties": {
+    "id": {
+      "format": "uuid",
+      "title": "Id",
+      "type": "string"
+    },
+    "sentence": {
+      "title": "Sentence",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "sentence"
+  ],
+  "title": "NumeralInputRow",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false
+}

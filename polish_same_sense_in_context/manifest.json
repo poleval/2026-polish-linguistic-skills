@@ -1,0 +1,26 @@
+{
+  "prompt_template": "Jesteś ekspertem od semantyki języka polskiego.\n\nW zdaniu wzorcowym wyraz docelowy jest oznaczony jako [[TARGET]]...[[/TARGET]]. Każde z czterech zdań kandydujących, oznaczonych literami A–D, zawiera ten sam wyraz, oznaczony w ten sam sposób.\n\nTwoim zadaniem jest wskazać zdanie kandydujące, w którym wyraz docelowy ma dokładnie to samo znaczenie co w zdaniu wzorcowym. Dokładnie jedno zdanie spełnia ten warunek.\n\nZasady:\n1. Porównuj znaczenie wyrazu w kontekście, a nie jego formę gramatyczną.\n2. Zwróć wyłącznie jedną literę: A, B, C lub D.\n3. Nie dodawaj wyjaśnień ani komentarzy.\n\nZdanie wzorcowe: {{ reference_sentence }}\n\nZdania kandydujące:{% for label, text in candidates | dictsort %}\n{{ label }}. {{ text }}{% endfor %}",
+  "generation": {
+    "temperature": 0.0,
+    "max_tokens": 32,
+    "stop": [
+      "\n"
+    ]
+  },
+  "output_shape": {
+    "max_words": 1,
+    "allow_empty": false,
+    "allow_newline": false
+  },
+  "dataset": "polish_same_sense_in_context",
+  "scorer": "same_sense_in_context",
+  "version_label": "1.0.0",
+  "published_at": "2026-10-22T11:21:26.323071Z",
+  "source_data_repo": "ipipan/llms4eu-evaluations-datasets",
+  "source_data_revision": "fa000128fb58ba2e7b974e349a5d3979b9a28422",
+  "code_revision": "c1df7eb62462b6da0555389786a68fabf0876e1c",
+  "gold_repo": "ipipan/llms4eu-benchmarks-gold",
+  "gold_revision": "99077a72707a322a196ae4c94a1806c6d3241fa2",
+  "inputs_file": "polish_same_sense_in_context/inputs.jsonl",
+  "items": 139
+}

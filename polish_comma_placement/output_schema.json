@@ -1,0 +1,29 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "format": "uuid",
+      "type": "string"
+    },
+    "commas": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "optional": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "commas",
+    "optional"
+  ],
+  "type": "object",
+  "title": "CommaPlacement submission line",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

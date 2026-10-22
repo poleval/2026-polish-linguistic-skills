@@ -1,0 +1,24 @@
+{
+  "prompt_template": "Jesteś ekspertem od gramatyki języka polskiego.\n\nTwoim zadaniem jest ocenić, czy podane zdanie jest poprawne pod względem morfoskładniowym, a jeśli nie, poprawić je w minimalny sposób.\n\nZasady:\n1. Sprawdź m.in.: zgodność rodzaju, liczby i przypadka; zgodność podmiotu z orzeczeniem; rząd przypadka po przyimkach.\n2. Nie oceniaj stylu, prawdziwości treści ani naturalności zdania.\n3. Jeżeli zdanie jest poprawne, ustaw \"answer\" na \"POPRAWNE\", a \"corrected_sentence\" na pusty ciąg znaków.\n4. Jeżeli zdanie zawiera błędy, ustaw \"answer\" na \"NIEPOPRAWNE\", a w \"corrected_sentence\" podaj całe zdanie poprawione minimalnie: zmień tylko formy potrzebne do usunięcia błędów, nie zmieniaj doboru słów, liczby gramatycznej, szyku, interpunkcji ani budowy zdania.\n5. Zwróć wyłącznie obiekt JSON w postaci: {\"answer\": \"POPRAWNE\" lub \"NIEPOPRAWNE\", \"corrected_sentence\": \"...\"}\n6. Nie dodawaj wyjaśnień ani komentarzy.\n\nZdanie: {{ sentence }}",
+  "generation": {
+    "temperature": 0.0,
+    "max_tokens": 512,
+    "stop": []
+  },
+  "output_shape": {
+    "max_words": 200,
+    "allow_empty": false,
+    "allow_newline": true
+  },
+  "dataset": "polish_error_detection_correction",
+  "scorer": "error_detection_correction",
+  "version_label": "1.0.0",
+  "published_at": "2026-10-22T11:20:46.766941Z",
+  "source_data_repo": "ipipan/llms4eu-evaluations-datasets",
+  "source_data_revision": "fa000128fb58ba2e7b974e349a5d3979b9a28422",
+  "code_revision": "c1df7eb62462b6da0555389786a68fabf0876e1c",
+  "gold_repo": "ipipan/llms4eu-benchmarks-gold",
+  "gold_revision": "6ff9f419249c994cc7912806ee01cbeda0ad92b8",
+  "inputs_file": "polish_error_detection_correction/inputs.jsonl",
+  "items": 421
+}
