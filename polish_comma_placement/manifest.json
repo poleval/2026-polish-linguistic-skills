@@ -1,0 +1,24 @@
+{
+  "prompt_template": "Jesteś ekspertem od interpunkcji języka polskiego.\n\nW zdaniu miejsca, w których może stać przecinek, są oznaczone numerami: [1], [2], [3], …\n\nTwoim zadaniem jest wskazać wszystkie oznaczone miejsca, w których zgodnie z zasadami interpunkcji polskiej powinien stać przecinek.\n\nZasady:\n1. W \"commas\" podaj numery wszystkich miejsc, w których przecinek jest wymagany, w kolejności rosnącej.\n2. W \"optional\" podaj numery miejsc, w których przecinek jest dopuszczalny, ale nie wymagany, w kolejności rosnącej.\n3. Jeżeli w żadnym oznaczonym miejscu przecinek nie jest wymagany, zwróć pustą listę w \"commas\".\n4. Zwróć wyłącznie obiekt JSON w postaci: {\"commas\": [...], \"optional\": [...]}\n5. Nie dodawaj wyjaśnień, komentarzy ani całego zdania.\n\nZdanie: {{ sentence_with_positions }}",
+  "generation": {
+    "temperature": 0.0,
+    "max_tokens": 128,
+    "stop": []
+  },
+  "output_shape": {
+    "max_words": 60,
+    "allow_empty": false,
+    "allow_newline": true
+  },
+  "dataset": "polish_comma_placement",
+  "scorer": "comma_placement",
+  "version_label": "1.0.0",
+  "published_at": "2026-10-22T11:20:02.308517Z",
+  "source_data_repo": "ipipan/llms4eu-evaluations-datasets",
+  "source_data_revision": "fa000128fb58ba2e7b974e349a5d3979b9a28422",
+  "code_revision": "c1df7eb62462b6da0555389786a68fabf0876e1c",
+  "gold_repo": "ipipan/llms4eu-benchmarks-gold",
+  "gold_revision": "0d5d173be7914902bf025a6bb9d7eccb3a1129a9",
+  "inputs_file": "polish_comma_placement/inputs.jsonl",
+  "items": 1759
+}

@@ -1,0 +1,24 @@
+{
+  "prompt_template": "Jesteś ekspertem od analizy dyskursu w języku polskim.\n\nFragment tekstu jest podzielony na jednostki dyskursu, które razem, bez nakładania się, pokrywają cały fragment. Każda jednostka ma identyfikator w nawiasach kwadratowych, np. [1.1]. Jednostka może składać się z kilku nieciągłych części. Liczba w nawiasach okrągłych przed częścią, np. (0), to pozycja tej części w oryginalnym tekście.\n\nTwoim zadaniem jest odtworzyć hierarchiczną strukturę dyskursu fragmentu: dla każdej jednostki z wyjątkiem korzenia wskaż jednostkę nadrzędną (\"head\") oraz relację dyskursową (\"relation\"), która łączy jednostkę z jej jednostką nadrzędną.\n\nDopuszczalne relacje: Alternative, Attribution, Cause, Co-occurence, Comment, Concession, Condition, Contrast, Elaboration, Entity-elaboration, Exemplification, Feedback dependence, Formatting, Manner, Metatext, Purpose, Question-Answer, Repetition, Sequence-Elaboration, Similarity, Substitution.\n\nZasady:\n1. Dokładnie jedna jednostka jest korzeniem: jej \"head\" i \"relation\" to null.\n2. Każda pozostała jednostka ma w \"head\" identyfikator innej jednostki tego fragmentu, a w \"relation\" jedną z dopuszczalnych relacji, zapisaną dokładnie tak jak powyżej.\n3. Jednostka nadrzędna może stać w tekście przed jednostką zależną albo po niej.\n4. Wszystkie zależności tworzą jedno drzewo: nie ma cykli, a od każdej jednostki, przechodząc po jednostkach nadrzędnych, dochodzi się do korzenia.\n5. Każdą jednostkę fragmentu podaj dokładnie raz.\n6. Zwróć wyłącznie obiekt JSON w postaci, np.: {\"discourse_units\": [{\"du_id\": \"1.1\", \"head\": null, \"relation\": null}, {\"du_id\": \"1.2\", \"head\": \"1.1\", \"relation\": \"Attribution\"}]}\n   Wartości \"du_id\" i \"head\" są napisami w cudzysłowie, przepisanymi dokładnie tak, jak w nawiasach kwadratowych, np. \"13.10\", a nie 13.1.\n7. Nie dodawaj wyjaśnień, komentarzy ani tekstu jednostek.\n\nJednostki dyskursu:\n{% for unit in discourse_units -%}\n[{{ unit.du_id }}] {% for part in unit.parts -%}\n({{ part.order }}) {{ part.text }}{{ \" \" if not loop.last }}\n{%- endfor %}\n{% endfor %}",
+  "generation": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "stop": []
+  },
+  "output_shape": {
+    "max_words": 3000,
+    "allow_empty": false,
+    "allow_newline": true
+  },
+  "dataset": "polish_discourse_parsing",
+  "scorer": "discourse_parsing",
+  "version_label": "1.0.0",
+  "published_at": "2026-10-22T11:20:30.316472Z",
+  "source_data_repo": "ipipan/llms4eu-evaluations-datasets",
+  "source_data_revision": "fa000128fb58ba2e7b974e349a5d3979b9a28422",
+  "code_revision": "c1df7eb62462b6da0555389786a68fabf0876e1c",
+  "gold_repo": "ipipan/llms4eu-benchmarks-gold",
+  "gold_revision": "7ebdfcf0be66a7c49c0cad89153f572d1004ff35",
+  "inputs_file": "polish_discourse_parsing/inputs.jsonl",
+  "items": 63
+}

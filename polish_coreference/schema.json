@@ -1,0 +1,30 @@
+{
+  "description": "One row of the published polish_coreference/inputs.jsonl.",
+  "properties": {
+    "id": {
+      "format": "uuid",
+      "title": "Id",
+      "type": "string"
+    },
+    "context": {
+      "title": "Context",
+      "type": "string"
+    },
+    "candidates": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Candidates",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "context",
+    "candidates"
+  ],
+  "title": "CoreferenceInputRow",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false
+}

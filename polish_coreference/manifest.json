@@ -1,0 +1,26 @@
+{
+  "prompt_template": "Jesteś ekspertem od analizy tekstu w języku polskim.\n\nW tekście jedna wzmianka jest oznaczona jako docelowa: [T]...[/T]. Cztery wcześniejsze wzmianki są oznaczone jako kandydatki: [A]...[/A], [B]...[/B], [C]...[/C], [D]...[/D].\n\nTwoim zadaniem jest wskazać kandydatkę, która odnosi się do tego samego obiektu lub osoby co wzmianka docelowa.\n\nZasady:\n1. Wzmianka docelowa może być zaimkiem albo frazą rzeczownikową.\n2. Weź pod uwagę rodzaj, liczbę, przypadek oraz sens całego tekstu.\n3. Zwróć wyłącznie jedną literę: A, B, C lub D.\n4. Nie dodawaj wyjaśnień ani komentarzy.\n\nTekst: {{ context }}\n\nKandydatki:{% for label, text in candidates | dictsort %}\n{{ label }}. {{ text }}{% endfor %}",
+  "generation": {
+    "temperature": 0.0,
+    "max_tokens": 32,
+    "stop": [
+      "\n"
+    ]
+  },
+  "output_shape": {
+    "max_words": 1,
+    "allow_empty": false,
+    "allow_newline": false
+  },
+  "dataset": "polish_coreference",
+  "scorer": "coreference",
+  "version_label": "1.0.0",
+  "published_at": "2026-10-22T11:20:14.678276Z",
+  "source_data_repo": "ipipan/llms4eu-evaluations-datasets",
+  "source_data_revision": "fa000128fb58ba2e7b974e349a5d3979b9a28422",
+  "code_revision": "c1df7eb62462b6da0555389786a68fabf0876e1c",
+  "gold_repo": "ipipan/llms4eu-benchmarks-gold",
+  "gold_revision": "99971617cde584ddb70895c3befac1739c40665c",
+  "inputs_file": "polish_coreference/inputs.jsonl",
+  "items": 348
+}

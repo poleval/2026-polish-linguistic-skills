@@ -1,0 +1,58 @@
+{
+  "$defs": {
+    "UnitPrediction": {
+      "additionalProperties": false,
+      "properties": {
+        "du_id": {
+          "type": "string"
+        },
+        "head": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "relation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "du_id",
+        "head",
+        "relation"
+      ],
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "format": "uuid",
+      "type": "string"
+    },
+    "discourse_units": {
+      "items": {
+        "$ref": "#/$defs/UnitPrediction"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "discourse_units"
+  ],
+  "type": "object",
+  "title": "DiscourseParsing submission line",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

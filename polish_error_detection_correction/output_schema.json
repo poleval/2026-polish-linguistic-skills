@@ -1,0 +1,23 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "format": "uuid",
+      "type": "string"
+    },
+    "answer": {
+      "type": "string"
+    },
+    "corrected_sentence": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "answer",
+    "corrected_sentence"
+  ],
+  "type": "object",
+  "title": "ErrorDetectionCorrection submission line",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
