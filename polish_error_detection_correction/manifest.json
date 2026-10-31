@@ -12,13 +12,13 @@
   },
   "dataset": "polish_error_detection_correction",
   "scorer": "error_detection_correction",
-  "version_label": "1.0.0",
-  "published_at": "2026-10-22T11:20:46.766941Z",
+  "version_label": "1.0.1",
+  "published_at": "2026-10-31T07:25:48.346668Z",
   "source_data_repo": "ipipan/llms4eu-evaluations-datasets",
-  "source_data_revision": "fa000128fb58ba2e7b974e349a5d3979b9a28422",
-  "code_revision": "c1df7eb62462b6da0555389786a68fabf0876e1c",
+  "source_data_revision": "31dc4a9b47fdffeaf14ace19b0c1d956310ffce6",
+  "code_revision": "68bcca67e38259e7dd6d8c281028ce52bcf3ee03",
   "gold_repo": "ipipan/llms4eu-benchmarks-gold",
-  "gold_revision": "6ff9f419249c994cc7912806ee01cbeda0ad92b8",
+  "gold_revision": "77fe9ffa398fbb25360d754f48c82fd04eea3935",
   "inputs_file": "polish_error_detection_correction/inputs.jsonl",
   "items": 421
 }

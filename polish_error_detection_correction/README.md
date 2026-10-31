@@ -54,7 +54,7 @@ For a grammatically correct sentence, return `POPRAWNE` with an empty string in 
 
 ### Evaluation
 
-The main metric is full-task accuracy. An item receives credit only if both the grammaticality label and the `corrected_sentence` value are correct. Unnecessary rewriting, missing corrections and newly introduced errors result in an incorrect sentence-level prediction.
+The main metric is full-task accuracy. An item receives credit only if both the correctness label and the `corrected_sentence` value are correct. Missing corrections, unnecessary changes and newly introduced errors result in an incorrect sentence-level prediction.
 
 ### Submission format
 
